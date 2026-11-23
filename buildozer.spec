@@ -22,3 +22,4 @@ android.archs = arm64-v8a, armeabi-v7a
 
 log_level = 2
 warn_on_root = 1
+android.build_tools = 34.0.0

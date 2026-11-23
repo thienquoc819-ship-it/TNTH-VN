@@ -25,8 +25,12 @@ jobs:
       - name: Install Buildozer and Cython
         run: pip install --upgrade pip cython==0.29.37 buildozer
 
-      - name: Accept SDK licenses and build debug APK
+      - name: Prepare SDK licenses and build debug APK
         run: |
+          SDK_DIR="/home/runner/.buildozer/android/platform/android-sdk"
+          mkdir -p "$SDK_DIR/licenses"
+          printf "8933bad161af4178b1185d1a37fbf41ea5269c55\nd56f5fd163e790c0b9fe8564d8a767cd67930658\n24333f8a63b6825ea9c5514f83c2829b004d1fee\n" > "$SDK_DIR/licenses/android-sdk-license"
+          printf "84831b9409646a918e30573bab4c9c91346d8791\n" > "$SDK_DIR/licenses/android-sdk-preview-license"
           yes | buildozer android accept_sdk_license || true
           buildozer -v android debug
 
