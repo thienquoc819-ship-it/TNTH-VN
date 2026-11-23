@@ -14,8 +14,8 @@ orientation = portrait
 fullscreen = 0
 
 android.permissions = INTERNET
-android.api = 35
-android.minapi = 23
+android.api = 33
+android.minapi = 21
 android.archs = arm64-v8a, armeabi-v7a
 
 [buildozer]
